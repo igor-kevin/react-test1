@@ -17,6 +17,7 @@ function ListGroup() {
     <>
       <h1>List </h1>
       {getMessage()}
+      {items.length === 0 && <p>Nenhum item na lista.</p>}
       <ul className="list-group">
         {items.map((item) => (
           <li key={item}>{item}</li>
