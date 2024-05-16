@@ -8,17 +8,10 @@ function ListGroup() {
   ];
   items = [];
 
-  if (items.length === 0)
-    return (
-      <>
-        <h1>Lista</h1>
-        <p>Sem items.</p>
-      </>
-    );
-
   return (
     <>
       <h1>List </h1>
+      {items.length === 0 ? <p>Nenhum item na lista.</p> : null}
       <ul className="list-group">
         {items.map((item) => (
           <li key={item}>{item}</li>
