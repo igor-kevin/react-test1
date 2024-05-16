@@ -1,11 +1,20 @@
 function ListGroup() {
-  const items = [
+  let items = [
     "São Paulo",
     "Rio de Janeiro",
     "Bahia",
     "Tocantins",
     "Espirito Santo",
   ];
+  items = [];
+
+  if (items.length === 0)
+    return (
+      <>
+        <h1>Lista</h1>
+        <p>Sem items.</p>
+      </>
+    );
 
   return (
     <>
