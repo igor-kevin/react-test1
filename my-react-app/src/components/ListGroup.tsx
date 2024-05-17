@@ -1,29 +1,26 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = [
-    "São Paulo",
-    "Rio de Janeiro",
-    "Bahia",
-    "Tocantins",
-    "Espirito Santo",
-  ];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
 
+function ListGroup(props: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   const getMessage = () => {
-    return items.length === 0 ? <p>Nenhum item na lista.</p> : null;
+    return props.items.length === 0 ? <p>Nenhum item na lista.</p> : null;
   };
 
   //event handler
 
   return (
     <>
-      <h1>List </h1>
+      <h1>{props.heading} </h1>
       {getMessage()}
-      {items.length === 0 && <p>Nenhum item na lista.</p>}
+      {props.items.length === 0 && <p>Nenhum item na lista.</p>}
       <ul className="list-group">
-        {items.map((item, index) => (
+        {props.items.map((item, index) => (
           <li
             className={
               selectedIndex === index
